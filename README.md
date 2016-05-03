@@ -1,6 +1,7 @@
 # Serilog.Sinks.Json [![Build status](https://ci.appveyor.com/api/projects/status/22173h76wlpvmqvk/branch/master?svg=true)](https://ci.appveyor.com/project/NicholasBlumhardt/serilog-sinks-json/branch/master)
 
-Outputs Serilog events in a lossless JSON format. This is useful when 
+Outputs Serilog events in a lossless JSON format. This is useful for local logging when files may later be analyzed mechanically,
+or when running on a platform that collects stdout as a log stream (i.e. Docker).
 
 ```json
 {"Timestamp":"2016-05-03T10:43:07.6408174+10:00","Level":"Information",
