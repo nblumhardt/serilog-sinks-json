@@ -1,0 +1,40 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "Configuration-friendly JSON file, rolling file and stdout (Console) wrappers for Serilog",
+  "authors": [ "nblumhardt" ],
+  "tags": [ "serilog", "json" ],
+  "projectUrl": "https://github.com/nblumhardt/serilog-sinks-json",
+  "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
+  "iconUrl": "http://serilog.net/images/serilog-sink-nuget.png",
+
+  "xmlDoc": true,
+
+  "frameworks": {
+    "net451": {
+      "frameworkAssemblies": {
+        "System.Runtime": "",
+        "System.IO":  ""
+      },
+      "dependencies": {
+        "Serilog": "1.5.14"
+      }
+    },
+    "dotnet5.4": {
+      "compilationOptions": {
+        "define": [ "BUFFERING_CONTROL", "LEVEL_SWITCH", "NEW_FILE_NS" ]
+      },
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516",
+        "System.IO": "4.0.11-beta-23516",
+        "Serilog": "2.0.0-beta-531",
+        "Serilog.Sinks.RollingFile": "2.0.0-beta-700",
+        "Serilog.Sinks.File": "2.0.0-beta-700",
+        "Serilog.Sinks.Console": "2.0.0-beta-700"
+      }
+    }
+  }
+}
