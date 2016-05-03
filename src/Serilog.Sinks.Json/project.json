@@ -32,8 +32,7 @@
         "System.IO": "4.0.11-beta-23516",
         "Serilog": "2.0.0-beta-531",
         "Serilog.Sinks.RollingFile": "2.0.0-beta-700",
-        "Serilog.Sinks.File": "2.0.0-beta-700",
-        "Serilog.Sinks.Console": "2.0.0-beta-700"
+        "Serilog.Sinks.File": "2.0.0-beta-700"
       }
     }
   }
