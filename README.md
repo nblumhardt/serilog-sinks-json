@@ -1,4 +1,4 @@
-# Serilog.Sinks.Json
+# Serilog.Sinks.Json [![Build status](https://ci.appveyor.com/api/projects/status/22173h76wlpvmqvk/branch/master?svg=true)](https://ci.appveyor.com/project/NicholasBlumhardt/serilog-sinks-json/branch/master)
 
 Outputs Serilog events in a lossless JSON format. This is useful when 
 
