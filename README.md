@@ -22,6 +22,10 @@ All three wrappers are in the _Serilog.Sinks.Json_ package.
 Install-Package Serilog.Sinks.Json -Pre -DependencyVersion Highest
 ```
 
+**Note:** on the regular CLR platforms (.NET 4.5.1 etc.) the package targets Serilog 1.5. On .NET Core, Serilog 2.0.0-beta
+is targeted. Installation may sometimes require manually adding a reference to _System.Runtime.dll_ before installing the
+package, and manually removing this reference afterwards. Hopefully the tooling around this will be tidied up soon.
+
 ### Console
 
 In code:

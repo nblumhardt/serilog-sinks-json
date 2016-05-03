@@ -11,7 +11,7 @@ install:
 - ps: Invoke-WebRequest https://api.nuget.org/downloads/nuget.exe -OutFile nuget.exe
 build_script:
 - cmd: >-
-    nuget restore serilog-timings.sln
+    nuget restore serilog-sinks-json.sln
 
     nuget install xunit.runner.console -ExcludeVersion -Pre -OutputDirectory packages
 
@@ -23,11 +23,11 @@ build_script:
 
     set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
 
-    msbuild serilog-timings.sln /m:4 /nologo /v:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+    msbuild serilog-sinks-json.sln /m:4 /nologo /v:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 test_script:
-- cmd: dnx --framework dnx451 -p test\SerilogTimings.Tests test
+- cmd: dnx --framework dnx451 -p test\Serilog.Sinks.Json.Tests test
 artifacts:
-- path: artifacts\bin\SerilogTimings\Release\SerilogTimings.*.nupkg
+- path: artifacts\bin\Serilog.Sinks.Json\Release\Serilog.Sinks.Json.*.nupkg
 deploy:
 - provider: NuGet
   api_key:
