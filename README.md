@@ -1,5 +1,30 @@
 # Serilog.Sinks.Json [![Build status](https://ci.appveyor.com/api/projects/status/22173h76wlpvmqvk/branch/master?svg=true)](https://ci.appveyor.com/project/NicholasBlumhardt/serilog-sinks-json/branch/master)
 
+### Notice
+
+**This package is being made obsolete.** The 2.1+ versions of the File, Rolling File and Console sinks now all have configuration overloads that accept an `ITextFormatter`.
+
+For example, for _Serilog.Sinks.File_ version 2.1.0 and above, the following configuration is equivalent to `JsonFile` from this package:
+
+```csharp
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.File(new JsonFormatter(), "./my-app-log.json")
+    .CreateLogger();
+```
+
+The XML `<appSettings>` support in _Serilog.Settings.AppSettings_ 2.0 and above will accept a formatter type name:
+
+```xml
+<appSettings>
+  <add key="serilog:write-to:File.path" value="./my-app-log.json" />
+  <add key="serilog:write-to:File.formatter"
+       value="Serilog.Formatting.Json.JsonFormatter, Serilog" />
+```
+
+Because of the better long-term prospects of the built-in support, this package is no longer recommended for use and is not being maintained.
+
+## Usage
+
 Outputs Serilog events in a lossless JSON format. This is useful for local logging when files may later be analyzed mechanically,
 or when running on a platform that collects stdout as a log stream (i.e. Docker).
 
@@ -35,7 +60,7 @@ In code:
 ```csharp
 Log.Logger = new LoggerConfiguration()
     .WriteTo.JsonConsole()
-	.CreateLogger();
+    .CreateLogger();
 ```
 
 In XML:
